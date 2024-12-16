@@ -53,3 +53,8 @@
 
 
 /* posts categories */
+.posts-feature__item.posts-categories {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
