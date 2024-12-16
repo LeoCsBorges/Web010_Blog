@@ -1,0 +1,16 @@
+.main-container {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    border: 2px solid blue;
+}
+
+.posts {
+    max-width: 80%;
+}
+
+.posts-features {
+    flex-grow: 1;
+    min-width: 300px;
+}

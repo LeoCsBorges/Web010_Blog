@@ -1,0 +1,55 @@
+.posts-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* each post feature 'section' */
+.posts-feature {
+    background-color: #FFF;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aside__header {
+    padding: .5rem;
+    background-color: var(--primary-bg-color);
+}
+
+.aside__header__title {
+    color: var(--primary-font-color);
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* recent posts */
+.posts-feature__content {
+    padding: .5rem;
+}
+
+.posts-feature__item {
+    display: flex;
+    gap: .5rem;
+    padding-block: .5rem;
+    border-bottom: solid 1px lightgray;
+}
+
+.posts-feature__item__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.posts-feature__item__title {
+    font-size: .85rem;
+    font-weight: 500;
+    line-height: 1rem;
+}
+
+.posts-feature__item__author {
+    color: var(--secondary-font-color);
+    font-size: .75rem;
+}
+
+
+/* posts categories */

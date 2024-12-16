@@ -1,0 +1,82 @@
+.header {
+    color: var(--primary-font-color);
+}
+
+/* masthead */
+.masthead {
+    padding: .75rem 1.5rem;
+    background-color: var(--primary-bg-color);
+}
+
+.masthead-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.masthead__timing {
+    color: var(--secondary-font-color);
+    font-size: .75rem;
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+}
+
+.masthead__timing i {
+    font-size: 1.25rem;
+}
+
+.masthead__nav {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+
+
+/* header */
+.header__wrapper {
+    background-color: var(--secondary-bg-color);
+    padding: 1.5rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo__img {
+    max-height: 96px;
+    filter: drop-shadow(6px 6px 2px rgba(0, 0, 0, .2));
+}
+
+.logo__title {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 10px;
+    text-shadow: 2px 4px 2px rgba(0, 0, 0, 0.35);
+}
+
+.nav__links {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav__link a {
+    display: block;
+    padding: .5rem;
+}
+
+/* >>>> provisiorio */
+.nav__link:nth-child(1) {
+    border-bottom: 1px solid var(--primary-font-color);
+}
