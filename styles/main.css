@@ -1,16 +1,50 @@
+@import url(post-card.css);
+
+/* main section */
 .main-container {
     padding: 3rem 1.5rem;
     display: flex;
     flex-direction: row;
     gap: 2rem;
-    border: 2px solid blue;
-}
-
-.posts {
-    max-width: 80%;
 }
 
 .posts-features {
-    flex-grow: 1;
-    min-width: 300px;
+    min-width: 280px;
+    max-width: 360px;
+}
+
+
+/* posts cards pagination */
+.posts-cards-pagination {
+    user-select: none;
+    margin-top: 1.25rem;
+}
+
+.pagination-items {
+    width: max-content;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.pagination-item {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#pagination-left,
+#pagination-right {
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.pagination-bullet.active-bullet {
+    color: var(--primary-font-color);
+    background-color: var(--primary-bg-color);
 }

@@ -58,3 +58,36 @@
     display: flex;
     align-items: center;
 }
+
+
+/* follow us */
+.posts-feature__item.posts-medias {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.posts-feature__item.posts-medias .posts-feature__item__title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* font-size: 1rem; */
+}
+
+
+.posts-feature__item.posts-medias .facebook-icon {
+    color: #3a5896;
+}
+
+.posts-feature__item.posts-medias .youtube-icon {
+    color: #fe0000;
+}
+
+.posts-feature__item.posts-medias .instagram-icon {
+    background: linear-gradient(to bottom, #f48b20, #5d2169);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.posts-feature__item.posts-medias .twitter-icon {
+    color: #1d9bf0;
+}

@@ -2,6 +2,7 @@
 @import url(../styles/header.css);
 @import url(../styles/main.css);
 @import url(../styles/aside.css);
+@import url(../styles/post.css);
 @import url(../styles/footer.css);
 
 
@@ -10,7 +11,9 @@
     --secondary-font-color: #acacac;
     --primary-bg-color: #263948;
     --secondary-bg-color: #3F5261;
-    --body-bg-color: #EEECF7;
+    --secondary-bg-color-button: color-mix(in srgb, #3F5261 100%, black 10%);
+    --secondary-bg-color-hover: color-mix(in srgb, #3F5261 100%, white 10%);
+    --body-bg-color: #ECF0F1;
 }
 
 body {

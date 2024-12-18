@@ -15,11 +15,10 @@
 }
 
 .masthead__timing {
-    color: var(--secondary-font-color);
-    font-size: .75rem;
+    font-size: .875rem;
     display: flex;
-    gap: .25rem;
     align-items: center;
+    gap: .25rem;
 }
 
 .masthead__timing i {
@@ -28,19 +27,25 @@
 
 .masthead__nav {
     display: flex;
-    align-items: center;
     gap: .75rem;
 }
 
+.masthead__nav li {
+    display: block;
+    height: 31px;
+}
+
 .masthead__nav__link {
+    display: block;
+    height: 100%;
+    padding: .5rem;
     user-select: none;
-    padding: .25rem;
     border-radius: 4px;
-    background-color: var(--secondary-bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .25rem;
+    background-color: var(--secondary-bg-color-button);
+}
+
+.masthead__nav__link:hover {
+    background-color: var(--secondary-bg-color-hover);
 }
 
 .search-wrapper {
@@ -51,7 +56,7 @@
 
 .search-wrapper .masthead__nav__link {
     width: 100%;
-    padding-block: .25rem;
+    padding-block: .5rem;
     padding-right: .75rem;
     color: var(--primary-font-color);
     border: none;
@@ -60,7 +65,7 @@
 
 .search-wrapper i {
     position: absolute;
-    top: 3px;
+    top: 8px;
     right: 4px;
 }
 
@@ -74,9 +79,9 @@
 }
 
 .masthead__nav__link.login {
-    padding-block: .25rem;
-    padding-inline: .5rem;
-    font-size: .875rem;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
 }
 
 
@@ -123,7 +128,6 @@
     padding: .5rem;
 }
 
-/* >>>> provisiorio */
-.nav__link:nth-child(1) {
+.nav__link.active-nav__link {
     border-bottom: 1px solid var(--primary-font-color);
 }

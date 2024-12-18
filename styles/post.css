@@ -1,0 +1,10 @@
+.post {
+    flex-grow: 1;
+    max-width: 80%;
+    background-color: #FFF;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.post__img {
+    max-width: 400px;
+}
