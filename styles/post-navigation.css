@@ -1,0 +1,12 @@
+.post-navigation {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#post-navigation-prev,
+#post-navigation-next {
+    display: flex;
+    align-items: center;
+}
