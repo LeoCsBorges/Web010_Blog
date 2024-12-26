@@ -26,3 +26,30 @@ export async function userLoginRequest(userEmail, password) {
         return fetchResponse;
     }
 }
+
+export async function userTokenStorage(userJSON) {
+    const accessToken = userJSON.access_token;
+    const userEmail = userJSON.user.email;
+    const userID = userJSON.user.id;
+
+    const userObj = {
+        accessToken,
+        userEmail,
+        userID,
+    }
+
+    localStorage.setItem('user', JSON.stringify(userObj));
+}
+
+export function userTokenRecovery() {
+    return new Promise((resolve, reject) => {
+        const user = localStorage.getItem('user');
+
+        if (user) {
+            resolve(user);
+
+        } else {
+            reject('Usuario nao encontrado no localStorage')
+        }
+    })
+}

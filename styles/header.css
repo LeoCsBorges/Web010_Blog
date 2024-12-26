@@ -4,6 +4,7 @@
 
 /* masthead */
 .masthead {
+    user-select: none;
     padding: .75rem 1.5rem;
     background-color: var(--primary-bg-color);
 }
@@ -39,7 +40,6 @@
     display: block;
     height: 100%;
     padding: .5rem;
-    user-select: none;
     border-radius: 4px;
     background-color: var(--secondary-bg-color-button);
 }
@@ -49,7 +49,6 @@
 }
 
 .search-wrapper {
-    user-select: none;
     width: 120px;
     position: relative;
 }
@@ -65,8 +64,8 @@
 
 .search-wrapper i {
     position: absolute;
-    top: 8px;
-    right: 4px;
+    top: 7px;
+    right: 5px;
 }
 
 .search-wrapper .masthead__nav__link:focus {
@@ -78,12 +77,10 @@
     font-size: .875rem;
 }
 
-.masthead__nav__link.login {
-    display: flex;
-    align-items: center;
-    gap: .25rem;
+#user-btn {
+    display: none;
+    margin-left: -0.75rem;
 }
-
 
 /* header */
 .header__wrapper {

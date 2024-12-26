@@ -4,7 +4,7 @@ export function openUserLoginModal(onConfirmation) {
     document.querySelector('#input-userEmail').focus();
 
     //event listeners
-    document.querySelector('#submit-login').addEventListener('click', function (event) {
+    document.querySelector('#form-login').addEventListener('submit', function (event) {
         const userEmail = document.querySelector('#input-userEmail').value;
         const userPassword = document.querySelector('#input-password').value;
 
@@ -77,6 +77,7 @@ function createUserLoginModal() {
     passInput.setAttribute('type', 'password');
     passInput.setAttribute('name', 'password');
     passInput.setAttribute('placeholder', '●●●●●●●●');
+    passInput.setAttribute('minlength', '5');
     passInput.setAttribute('required', '');
 
     formSubmit.id = 'submit-login';
