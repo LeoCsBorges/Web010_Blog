@@ -27,7 +27,7 @@ export async function userLoginRequest(userEmail, password) {
     }
 }
 
-export async function userTokenStorage(userJSON) {
+export async function userObjectStorage(userJSON) {
     const accessToken = userJSON.access_token;
     const userEmail = userJSON.user.email;
     const userID = userJSON.user.id;
@@ -41,7 +41,7 @@ export async function userTokenStorage(userJSON) {
     localStorage.setItem('user', JSON.stringify(userObj));
 }
 
-export function userTokenRecovery() {
+export function userObjectRecovery() {
     return new Promise((resolve, reject) => {
         const user = localStorage.getItem('user');
 
@@ -52,4 +52,8 @@ export function userTokenRecovery() {
             reject('Usuario nao encontrado no localStorage')
         }
     })
+}
+
+export function userObjectDelete() {
+    localStorage.removeItem('user');
 }

@@ -10,10 +10,20 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
     document.querySelector('.timing').innerHTML = date;
 
-
     //user login verification
-    userLoginVerification();
+    try {
+        await userLoginVerification();
+    }
+    //no user on localstorage / logged out
+    catch (error) {
+        console.error(error);
+
+        if (this.location.href.includes('/userboard')) {
+            this.location.href = 'index.html';
+        }
+    }
 })
+
 
 document.querySelector('#login-btn').addEventListener('click', function () {
     userLoginController();

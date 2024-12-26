@@ -31,8 +31,7 @@
 
 .modal-content {
     user-select: none;
-    width: 480px;
-    height: 500px;
+    width: 460px;
     padding: 2rem 3rem;
     background-color: #FFF;
     border-radius: 8px;
@@ -129,4 +128,43 @@ input[type="submit"]:active {
 .forgot-password:hover {
     cursor: pointer;
     text-decoration: underline;
+}
+
+/* logout modal */
+.modal-msg {
+    margin-top: 1rem;
+}
+
+.buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cancel-modal-btn,
+.confirm-modal-btn {
+    cursor: pointer;
+    color: #FFF;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    border: none;
+}
+
+.cancel-modal-btn {
+    background-color: rgb(107, 5, 5);
+}
+
+.confirm-modal-btn {
+    background-color: var(--primary-bg-color);
+}
+
+.cancel-modal-btn:hover {
+    background-color: color-mix(in srgb, rgb(107, 5, 5), #FFF 15%);
+}
+
+.confirm-modal-btn:hover {
+    background-color: color-mix(in srgb, var(--primary-bg-color), #FFF 15%);
 }

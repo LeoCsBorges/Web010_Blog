@@ -1,11 +1,14 @@
-import { openUserLoginModal, closeUserLoginModal } from "../view/modal.js";
-import { userLoginRequest, userTokenRecovery, userTokenStorage } from "../api/user.js"
+import { openUserLoginModal, openUserLogoutModal, closeUserModal } from "../view/modal.js";
+import { userLoginRequest, userObjectRecovery, userObjectStorage, userObjectDelete } from "../api/user.js"
+
+let userIdentification = '';
 
 export async function userLoginVerification() {
     try {
-        const userJSON = await userTokenRecovery();
+        const userJSON = await userObjectRecovery();
         const user = JSON.parse(userJSON);
         const userName = user.userEmail.slice(0, 7);
+        userIdentification = user.userEmail;
 
         //login button swap
         document.querySelector('#login-btn').style.display = 'none';
@@ -13,7 +16,7 @@ export async function userLoginVerification() {
         document.querySelector('#user-btn').innerHTML = `<i class="ph-duotone ph-user"></i> ${userName.toUpperCase()}`;
     }
     catch (error) {
-        console.error(error);
+        throw Error(error);
     }
 }
 
@@ -27,13 +30,13 @@ export async function userLoginController() {
                 const userJSON = await userLoginResponse.json();
 
                 //save users token
-                userTokenStorage(userJSON);
+                userObjectStorage(userJSON);
 
                 //check localstorge
                 userLoginVerification();
 
                 //close user login modal
-                closeUserLoginModal();
+                closeUserModal();
             }
 
         }
@@ -52,9 +55,11 @@ export async function userLoginController() {
 }
 
 export async function userLogoutController() {
-    console.log('to aqui sai fora')
+    const onConfirm = function () {
+        userObjectDelete();
+        closeUserModal();
+        location.href = 'index.html';
+    }
+
+    openUserLogoutModal(userIdentification, onConfirm);
 }
-
-
-
-//       campelo.lucas@hotmail.com

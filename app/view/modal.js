@@ -11,20 +11,31 @@ export function openUserLoginModal(onConfirmation) {
         event.preventDefault();
         onConfirmation(userEmail, userPassword);
     });
-    document.querySelector('.modal-close-btn').addEventListener('click', closeUserLoginModal);
-    document.querySelector('.backdrop').addEventListener('click', onCloseUserLoginModal);
+    document.querySelector('.modal-close-btn').addEventListener('click', closeUserModal);
+    document.querySelector('.backdrop').addEventListener('click', onCloseUserModal);
 }
 
-export function closeUserLoginModal() {
+export function openUserLogoutModal(userIdentification, onConfirmation) {
+    const modalHtml = createUserLogoutModal(userIdentification);
+    document.body.append(modalHtml);
+
+    //event listeners
+    document.querySelector('.cancel-modal-btn').addEventListener('click', closeUserModal);
+    document.querySelector('.modal-close-btn').addEventListener('click', closeUserModal);
+    document.querySelector('.backdrop').addEventListener('click', onCloseUserModal);
+    document.querySelector('.confirm-modal-btn').addEventListener('click', onConfirmation);
+}
+
+export function closeUserModal() {
     const modal = document.querySelector('#modal');
     if (modal) { modal.remove(); }
 }
 
-function onCloseUserLoginModal(event) {
+function onCloseUserModal(event) {
     //modal backdrop close
     if (this.classList.contains('backdrop')) {
         if (this == event.target) {
-            closeUserLoginModal();
+            closeUserModal();
         }
     }
 }
@@ -101,5 +112,39 @@ function createUserLoginModal() {
     return modal;
 }
 
+function createUserLogoutModal(userIdentification) {
+    //vars
+    const modal = document.createElement('div');
+    const backdrop = document.createElement('div');
+    const modalContent = document.createElement('div');
+    const modalCloseBtn = document.createElement('div');
+    const modalImg = document.createElement('img');
+    const modalMsg = document.createElement('p');
+    const buttons = document.createElement('div');
+    const cancelButton = document.createElement('button');
+    const confirmButton = document.createElement('button');
 
+    //attributes
+    modal.id = 'modal';
+    backdrop.classList.add('backdrop');
+    modalContent.classList.add('modal-content');
+    modalCloseBtn.classList.add('modal-close-btn');
+    modalImg.classList.add('modal__image');
+    modalImg.src = 'images/user-login.png';
+    modalImg.alt = 'Ícone de usuário';
+    modalMsg.classList.add('modal-msg');
+    modalMsg.innerHTML = `Olá, <span style="font-weight: 700">${userIdentification}</span>. Deseja mesmo sair?`;
+    buttons.classList.add('buttons');
+    cancelButton.classList.add('cancel-modal-btn');
+    cancelButton.innerHTML = 'Cancelar';
+    confirmButton.classList.add('confirm-modal-btn');
+    confirmButton.innerHTML = 'Confirmar';
 
+    //html elements append
+    modal.append(backdrop);
+    backdrop.append(modalContent);
+    modalContent.append(modalCloseBtn, modalImg, modalMsg, buttons);
+    buttons.append(cancelButton, confirmButton);
+
+    return modal;
+}
